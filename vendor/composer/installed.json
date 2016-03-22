@@ -1,0 +1,118 @@
+[
+    {
+        "name": "workerman/workerman",
+        "version": "v3.3.0",
+        "version_normalized": "3.3.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/walkor/Workerman.git",
+            "reference": "c74f937aab834c12bb9fc93458ffbcbe6213c896"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/walkor/Workerman/zipball/c74f937aab834c12bb9fc93458ffbcbe6213c896",
+            "reference": "c74f937aab834c12bb9fc93458ffbcbe6213c896",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.3"
+        },
+        "suggest": {
+            "ext-libevent": "For better performance."
+        },
+        "time": "2016-02-25 10:59:35",
+        "type": "project",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Workerman\\": "./"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "authors": [
+            {
+                "name": "walkor",
+                "email": "walkor@workerman.net",
+                "homepage": "http://www.workerman.net",
+                "role": "Developer"
+            }
+        ],
+        "description": "An asynchronous event driven PHP framework for easily building fast, scalable network applications.",
+        "homepage": "http://www.workerman.net",
+        "keywords": [
+            "asynchronous",
+            "event-loop"
+        ]
+    },
+    {
+        "name": "workerman/channel",
+        "version": "v1.0.3",
+        "version_normalized": "1.0.3.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/walkor/Channel.git",
+            "reference": "1feb68ad03928c7ba7e52e7eb25a791a783b92e0"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/walkor/Channel/zipball/1feb68ad03928c7ba7e52e7eb25a791a783b92e0",
+            "reference": "1feb68ad03928c7ba7e52e7eb25a791a783b92e0",
+            "shasum": ""
+        },
+        "require": {
+            "workerman/workerman": ">=3.3.0"
+        },
+        "time": "2016-02-26 05:32:31",
+        "type": "project",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "Channel\\": "./src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "homepage": "http://www.workerman.net"
+    },
+    {
+        "name": "workerman/phpsocket.io",
+        "version": "v1.0.4",
+        "version_normalized": "1.0.4.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/walkor/phpsocket.io.git",
+            "reference": "4a47691a75627dac16363c1ff11e0c701384946f"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/walkor/phpsocket.io/zipball/4a47691a75627dac16363c1ff11e0c701384946f",
+            "reference": "4a47691a75627dac16363c1ff11e0c701384946f",
+            "shasum": ""
+        },
+        "require": {
+            "workerman/channel": ">=1.0.0",
+            "workerman/workerman": ">=3.1.8"
+        },
+        "time": "2016-02-24 09:03:18",
+        "type": "project",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "PHPSocketIO\\": "./src"
+            }
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "MIT"
+        ],
+        "homepage": "http://www.workerman.net",
+        "keywords": [
+            "Socket.io"
+        ]
+    }
+]

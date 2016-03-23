@@ -77,9 +77,9 @@ $sender_io->on('workerStart', function(){
             if(isset($connectionMap[$msg['to']])){
                 $sender_io->to($msg['to'])->emit('new_msg', $msgRefined);
                 // 推送成功则http返回ok，失败返回fail
-                return $http_connection->send('ok');
+                return $http_connection->send("{result:ok}");
             }else{
-                return $http_connection->send('fail');
+                return $http_connection->send("{result:fail}");
             }
             
         // 否则向viewlevel对应的群体推送
@@ -91,14 +91,14 @@ $sender_io->on('workerStart', function(){
                     ++$flag;
                 }
             }
-            return $http_connection->send(0 == $flag ? 'fail' : 'ok');
+            return $http_connection->send(0 == $flag ? "{result:fail}" : "{result:ok}");
         // to和viewlevel都为空时向所有人推送
         }else{
             $sender_io->emit('new_msg', $msgRefined);
-            return $http_connection->send('ok');
+            return $http_connection->send("{result:ok}");
         }
         //http接口返回fail
-        return $http_connection->send('fail');
+        return $http_connection->send("{result:fail}");
     };
     // 执行监听
     $inner_http_worker->listen();

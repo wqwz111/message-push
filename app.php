@@ -21,13 +21,12 @@ $sender_io->on('connection', function($socket){
             return;
         }
 
-        $jsonData = json_decode($data,true);
-        $uid = $jsonData['id'];
+        $uid = $data['id'];
         if(!isset($connectionMap[$uid]))
         {
             $connectionMap[$uid] = array(
                 'conn_count' => 0,
-                'viewlevel' => $jsonData['viewlevel']);
+                'viewlevel' => $data['viewlevel']);
         }
         // 连接计数
         ++$connectionMap[$uid]['conn_count'];

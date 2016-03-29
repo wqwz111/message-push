@@ -14,19 +14,20 @@ $connectionMap = array();
 
 $sender_io = new SocketIO(SOCKET_PORT);
 $sender_io->on('connection', function($socket){
-    $socket->on('login', function ($uid,$viewlevel)use($socket){
+    $socket->on('login', function ($data)use($socket){
         global $connectionMap;
         // 如果已经存在此连接则跳过
         if(isset($socket->uid)){
             return;
         }
 
-        $uid = (string)$uid;
+        $jsonData = json_decode($data,true);
+        $uid = $jsonData['id'];
         if(!isset($connectionMap[$uid]))
         {
             $connectionMap[$uid] = array(
                 'conn_count' => 0,
-                'viewlevel' => $viewlevel);
+                'viewlevel' => $jsonData['viewlevel']);
         }
         // 连接计数
         ++$connectionMap[$uid]['conn_count'];
